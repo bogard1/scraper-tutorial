@@ -14,7 +14,7 @@ puppeteer
   .then(html => {
     const $ = cheerio.load(html);
     const newsHeadlines = [];
-    $('a[href*="/r/news/comments"] > h2').each(function() {
+    $('a[href*="/r/news/comments"] > div > h3').each(function() {
       newsHeadlines.push({
         title: $(this).text(),
       });
